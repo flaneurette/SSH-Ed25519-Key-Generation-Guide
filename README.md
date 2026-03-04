@@ -185,7 +185,7 @@ Then shred new private key on server:
 shred -u ~/.ssh/id_ed25519
 ```
 
-Time: maybe 1 minute exposed on server. Yu could instant delete it after printing on screen. Your choice!
+Time: maybe 1 minute exposed on server. You could instantly delete it after printing on screen. Your choice!
 
 ---
 
