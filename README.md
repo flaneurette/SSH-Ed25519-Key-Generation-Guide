@@ -20,6 +20,7 @@
 - VeraCrypt to store server keys, with diceware passwords.
 - Powershell
 - Optional: Unbound DNS.
+- Optional: Wireshark
 
 ```
 # If you dont have it yet:
