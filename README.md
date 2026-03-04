@@ -76,6 +76,9 @@ sudo aide --check --config=/etc/aide/aide.conf
 Go back to Windows/PC and open/prepare `Powershell`, `VeraCrypt` and `PuTTYgen`. You should work fast when copying keys.
 
 ### Generate Ed25519 key pair
+
+If AIDE finished, start generating keys(s) on the server:
+
 ```
 ssh-keygen -t ed25519 -C "your_label_here" -f ~/.ssh/id_ed25519
 
