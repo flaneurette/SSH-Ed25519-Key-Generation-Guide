@@ -164,18 +164,19 @@ history -c
 
 Then paste directly into `PuTTYgen` - key never rendered in terminal at all.
 
+
+On Windows:
+
+1. Paste clipboard contents into PuTTYgen import dialog
+2. Immediately clear clipboard with PowerShell command
+3. Save as `id_ed25519` (no extension) inside a `VeraCrypt` container
+
 After pasting into PuTTYgen - clear Windows clipboard:
 
 ```
 # PowerShell - wipe clipboard immediately after paste
 Set-Clipboard -Value " "
 ```
-
-On Windows:
-
-1. Paste clipboard contents into PuTTYgen import dialog
-2. Immediately clear clipboard with above PowerShell command
-3. Save as `id_ed25519` (no extension) inside a `VeraCrypt` container
 
 Then shred new private key on server:
 
