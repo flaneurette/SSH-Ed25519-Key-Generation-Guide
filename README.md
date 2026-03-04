@@ -164,22 +164,6 @@ history -c
 
 Then paste directly into `PuTTYgen` - key never rendered in terminal at all.
 
-Why variable is safer than cat:
-
-```
-cat:
-  ├── Displays to stdout        - visible on screen
-  ├── Captured by terminal logs - PuTTY logging
-  ├── Lives in scrollback       - persists after session
-  └── Readable by screen capture malware
-
-Variable:
-  ├── Stored in memory only     - not displayed
-  ├── No stdout output          - nothing to capture
-  ├── unset wipes it            - removed from shell memory
-  └── Never exported            - invisible to child processes
-```
-
 After pasting into PuTTYgen - clear Windows clipboard:
 
 ```
@@ -192,6 +176,16 @@ On Windows:
 1. Paste clipboard contents into PuTTYgen import dialog
 2. Immediately clear clipboard with above PowerShell command
 3. Save as `id_ed25519` (no extension) inside a `VeraCrypt` container
+
+Then shred new private key on server:
+
+```
+# Private key is now in VeraCrypt on Windows
+# No reason to keep it on server
+shred -u ~/.ssh/id_ed25519
+```
+
+Time: maybe 1 minute exposed on server. Yu could instant delete it after printing on screen. Your choice!
 
 ---
 
@@ -292,14 +286,6 @@ cat ~/.ssh/authorized_keys
 
 # Verify old files are gone
 ls -la ~/.ssh/
-```
-
-Also shred new private key from server - it should only live in VeraCrypt:
-
-```
-# Private key is now in VeraCrypt on Windows
-# No reason to keep it on server
-shred -u ~/.ssh/id_ed25519
 ```
 
 Windows side - shred old .ppk from VeraCrypt. I do not recommend using Eraser, or shredding .exe's these are often compromised. Write your own shredder powershell file for Windows.
