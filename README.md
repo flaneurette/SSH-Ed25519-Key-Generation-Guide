@@ -465,7 +465,7 @@ Then restart cron and `logwatch`
 sudo systemctl start cron
 ```
 
-## Step 8 - Harden SSH Config
+## Step 8 - Harden SSH config
 
 While you're at it, verify `/etc/ssh/sshd_config`:
 
@@ -521,7 +521,7 @@ If paranoid: `netstat`
 
 ---
 
-## Step 9 - Store Keys in VeraCrypt
+## Step 9 - Store keys in veraCrypt
 
 Mount your `container_serverkeys.vc` and store:
 
@@ -532,12 +532,10 @@ container_serverkeys.vc/
   ├── id_ed25519.ppk       - PuTTY format private key
   └── authorized_keys.bak  - backup of server authorized_keys
 ```
-
 Unmount container immediately after.
-
 ---
 
-## Step 10 - Update Cold Storage Backups
+## Step 10 - Update cold storage backups
 
 ```
 1. Mount cold storage VeraCrypt container
@@ -545,11 +543,11 @@ Unmount container immediately after.
 3. Verify files copied correctly
 4. Unmount immediately
 5. Note rotation date
+6. If possible, also wrap your vc containers with GPG for cold cloud-storage
 ```
-
 ---
 
-## Why Not Generate Keys on Windows?
+## Why not generate keys on windows?
 
 ```
 Server generation advantages:
