@@ -61,11 +61,14 @@ Step 6 - Store private key in VeraCrypt
 ```
 ---
 
-## Step 1 - Generate Ed25519 Key Pair on Server
+## Generate Ed25519 Key Pair on Server
 
 SSH into your server using your existing key first.
 
-### Before key generation - establish baseline
+### Before key generation - establish baseline with AIDE
+
+Be patient, this takes a while. Go back to Windows/PC and open/prepare `Powershell`, `VeraCrypt` and `PuTTYgen`. You should work fast when copying keys.
+
 ```
 sudo aide --check --config=/etc/aide/aide.conf
 ```
@@ -96,9 +99,10 @@ Output should look like:
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAA... your_label_here
 ```
 
-### Key pool.
+### Key Pool.
 
-If you want more than one key, you can generate a keypool. Useful, for revoking keys later on.
+If you want more than one key, you can generate a keypool. Useful, for revoking keys later on. Then you already have 3 or 4 keys, if you rotate each 4 months. Which is a good idea, because no extra risk in generating new keys all the time.
+
 Be sure to use a `new diceware password` on each of them.
 
 ### Generate multiple Ed25519 keys in one session
