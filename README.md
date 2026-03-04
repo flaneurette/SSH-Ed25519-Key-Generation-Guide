@@ -183,7 +183,7 @@ On Windows:
 
 ---
 
-## Step 4 - Convert Private Key for PuTTY (PuTTYgen)
+## Step 4 - Convert private key for PuTTY (PuTTYgen)
 
 PuTTY uses `.ppk` format - you need to convert:
 
@@ -246,7 +246,7 @@ sudo tail -f /var/log/auth.log
 
 Once new key login is confirmed working - revoke and shred everything.
 
-Never just delete key files, always shred.
+Never just delete key files, always `shred`.
 
 Server side - remove from authorized_keys:
 ```
@@ -290,7 +290,7 @@ Also shred new private key from server - it should only live in VeraCrypt:
 shred -u ~/.ssh/id_ed25519
 ```
 
-Windows side - shred old .ppk from VeraCrypt. I do not recommend using Eraser, or shredding .exe these are often compromised. Write your own shredder powershell file for Windows.
+Windows side - shred old .ppk from VeraCrypt. I do not recommend using Eraser, or shredding .exe's these are often compromised. Write your own shredder powershell file for Windows.
 
 ```powershell
 # Mount VeraCrypt container_serverkeys.vc
@@ -333,7 +333,6 @@ Cold storage:
 ```
 
 ## Finish
-
 
 Check AIDE if any files were changed:
 
@@ -454,7 +453,6 @@ Then restart cron and `logwatch`
 ```
 sudo systemctl start cron
 ```
-
 
 ## Step 8 - Harden SSH Config
 
