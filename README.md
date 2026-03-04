@@ -70,7 +70,7 @@ SSH into your server using your existing key first.
 Be patient, this takes a while:
 
 ```
-sudo aide --check --config=/etc/aide/aide.conf
+sudo aide --init --config=/etc/aide/aide.conf
 ```
 
 Go back to Windows/PC and open/prepare `Powershell`, `VeraCrypt` and `PuTTYgen`. You should work fast when copying keys.
