@@ -285,10 +285,11 @@ cat ~/.ssh/authorized_keys
 ls -la ~/.ssh/
 ```
 
-Windows side - shred old .ppk from VeraCrypt. I do not recommend using Eraser, or shredding .exe's these are often compromised. Write your own shredder powershell file for Windows.
+Then on Windows: shred old .ppk from VeraCrypt. I do NOT recommend using `Eraser`, or `shredding .exe's` these are often compromised. Write your own shredder powershell file for Windows.
+
+# Mount VeraCrypt container_serverkeys.vc
 
 ```powershell
-# Mount VeraCrypt container_serverkeys.vc
 # Use your custom shredder on:
 #   old_id_rsa.ppk
 #   old_id_ecdsa.ppk
@@ -296,9 +297,9 @@ Windows side - shred old .ppk from VeraCrypt. I do not recommend using Eraser, o
 
 # Wipe clipboard
 Set-Clipboard -Value " "
-
-# Unmount container immediately after
 ```
+
+Unmount container immediately after use! (make it a habit)
 
 Revocation checklist:
 
