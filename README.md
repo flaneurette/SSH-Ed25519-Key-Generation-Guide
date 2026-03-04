@@ -217,8 +217,8 @@ PuTTY uses `.ppk` format - you need to convert:
 
 1. Open PuTTY
 2. Load your saved session or enter server IP
-3. Navigate to: Connection → SSH → Auth → Credentials
-4. Under Private key file for authentication → Browse
+3. Navigate to: Connection -> SSH -> Auth -> Credentials
+4. Under Private key file for authentication -> Browse
 5. Select your `id_ed25519.ppk` from VeraCrypt container
 6. Go back to Session
 7. Save the session
