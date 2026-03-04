@@ -298,7 +298,7 @@ ls -la ~/.ssh/
 
 Then on Windows: shred old .ppk from VeraCrypt. I do NOT recommend using `Eraser`, or `shredding .exe's` these are often compromised. Write your own shredder powershell file for Windows.
 
-## Mount VeraCrypt container_serverkeys.vc
+### Mount VeraCrypt container_serverkeys.vc
 
 Use your custom shredder on:
 
@@ -542,7 +542,9 @@ Unmount container immediately after every use (make it a habit) do not let it si
 3. Verify files copied correctly
 4. Unmount immediately
 5. Note rotation date
-6. If possible, also wrap your vc containers with GPG enecryption for cold cloud-storage, (as cloud = public)
+6. If possible, also wrap your VC containers 
+   with GPG encryption for cold cloud-storage, 
+  (as cloud = public! double encryption needed!)
 ```
 ---
 
