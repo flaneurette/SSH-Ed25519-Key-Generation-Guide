@@ -75,6 +75,8 @@ sudo aide --check --config=/etc/aide/aide.conf
 
 Go back to Windows/PC and open/prepare `Powershell`, `VeraCrypt` and `PuTTYgen`. You should work fast when copying keys.
 
+At this point: have your `diceware` passwords written down on paper. `Not in editor.` Only on `paper`.
+
 ### Generate Ed25519 key pair
 
 If AIDE finished, start generating keys(s) on the server:
