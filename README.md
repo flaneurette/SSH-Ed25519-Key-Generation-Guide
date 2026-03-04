@@ -298,10 +298,11 @@ ls -la ~/.ssh/
 
 Then on Windows: shred old .ppk from VeraCrypt. I do NOT recommend using `Eraser`, or `shredding .exe's` these are often compromised. Write your own shredder powershell file for Windows.
 
-# Mount VeraCrypt container_serverkeys.vc
+## Mount VeraCrypt container_serverkeys.vc
+
+Use your custom shredder on:
 
 ```powershell
-# Use your custom shredder on:
 #   old_id_rsa.ppk
 #   old_id_ecdsa.ppk
 #   any old raw private key files
