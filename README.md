@@ -58,9 +58,7 @@ Step 4 - Test new key login
 Step 5 - Revoke old key, shred it.
 Step 6 - Store private key in VeraCrypt
 ```
-
 ---
-
 
 ## Step 1 - Generate Ed25519 Key Pair on Server
 
@@ -70,6 +68,7 @@ SSH into your server using your existing key first.
 ```
 sudo aide --check --config=/etc/aide/aide.conf
 ```
+
 ### Generate Ed25519 key pair
 ```
 ssh-keygen -t ed25519 -C "your_label_here" -f ~/.ssh/id_ed25519
@@ -94,6 +93,18 @@ cat ~/.ssh/id_ed25519.pub
 Output should look like:
 ```
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAA... your_label_here
+```
+
+### Key pool.
+
+If you want more than one key, you can generate a keypool. Useful, for revoking keys later on.
+Be sure to use a `new diceware password` on each of them.
+
+### Generate multiple Ed25519 keys in one session
+```
+ssh-keygen -t ed25519 -C "key_01_2026" -f ~/.ssh/id_ed25519_01
+ssh-keygen -t ed25519 -C "key_02_2026" -f ~/.ssh/id_ed25519_02
+ssh-keygen -t ed25519 -C "key_03_2026" -f ~/.ssh/id_ed25519_03
 ```
 
 ---
