@@ -504,6 +504,10 @@ sudo systemctl status sshd
 
 > Warning: Always test in a new session before closing existing one.
 
+Then, if you blocked ports 80,443: open them up again.
+
+If paranoid: `netstat`
+
 ---
 
 ## Step 9 - Store Keys in VeraCrypt
