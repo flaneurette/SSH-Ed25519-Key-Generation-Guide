@@ -67,11 +67,13 @@ SSH into your server using your existing key first.
 
 ### Before key generation - establish baseline with AIDE
 
-Be patient, this takes a while. Go back to Windows/PC and open/prepare `Powershell`, `VeraCrypt` and `PuTTYgen`. You should work fast when copying keys.
+Be patient, this takes a while:
 
 ```
 sudo aide --check --config=/etc/aide/aide.conf
 ```
+
+Go back to Windows/PC and open/prepare `Powershell`, `VeraCrypt` and `PuTTYgen`. You should work fast when copying keys.
 
 ### Generate Ed25519 key pair
 ```
