@@ -108,25 +108,7 @@ ssh-keygen -t ed25519 -C "key_02_2026" -f ~/.ssh/id_ed25519_02
 ssh-keygen -t ed25519 -C "key_03_2026" -f ~/.ssh/id_ed25519_03
 ```
 
----
-
-## Step 2 - Add public key to authorized_keys
-
-```
-# Append public key to authorized_keys
-cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys
-
-# Set correct permissions (critical)
-chmod 700 ~/.ssh
-chmod 600 ~/.ssh/authorized_keys
-
-# Verify it was added
-cat ~/.ssh/authorized_keys
-```
-
----
-
-## Step 3 - Copy private key to windows (securely)
+## Copy private key to windows (securely)
 
 Never use `cat` for private keys - it exposes key material in terminal scrollback, logwatch, bash history, syslogs, ISP snapshots, PuTTY session logs, and screen capture malware.
 
@@ -150,7 +132,7 @@ clear && printf '\033[3J'
 history -c
 ```
 
-Even cleaner - pipe directly to clipboard (never displays, but requires xclip):
+Even cleaner - pipe directly to clipboard (never displays, but requires you `trusting` xclip):
 
 ```
 # Read, copy to clipboard, wipe - key never rendered on screen
@@ -186,7 +168,25 @@ Time: maybe 1 minute exposed on server. You could instantly delete it after prin
 
 ---
 
-## Step 4 - Convert private key for PuTTY (PuTTYgen)
+## Add public key to authorized_keys
+
+```
+# Append public key to authorized_keys
+cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys
+
+# Set correct permissions (critical)
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+
+# Verify it was added
+cat ~/.ssh/authorized_keys
+```
+
+---
+
+## Convert private key for PuTTY (PuTTYgen)
+
+Back to Windows:
 
 PuTTY uses `.ppk` format - you need to convert:
 
@@ -205,7 +205,7 @@ PuTTY uses `.ppk` format - you need to convert:
 
 ---
 
-## Step 5 - Configure PuTTY to use new key
+## Configure PuTTY to use new key
 
 1. Open PuTTY
 2. Load your saved session or enter server IP
@@ -217,7 +217,7 @@ PuTTY uses `.ppk` format - you need to convert:
 
 ---
 
-## Step 6 - Test new key login
+## Test new key login
 
 Critical: Do NOT close your existing session yet.
 
@@ -245,7 +245,7 @@ sudo tail -f /var/log/auth.log
 
 ---
 
-## Step 7 - Revoke old key(s) and shred
+## Revoke old key(s) and shred
 
 Once new key login is confirmed working - revoke and shred everything.
 
