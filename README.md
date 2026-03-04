@@ -462,6 +462,12 @@ Then restart cron and `logwatch`
 sudo systemctl start cron
 ```
 
+Then run AIDE **again**, and be patient. Required, otherwise it might log previous stored keys.
+
+```
+sudo aide --init --config=/etc/aide/aide.conf
+```
+
 ## Harden SSH config
 
 While you're at it, verify `/etc/ssh/sshd_config`:
