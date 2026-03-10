@@ -404,6 +404,7 @@ echo "=== Deep clean... ==="
 # Shred sensitive files.
 shred -u /var/log/auth.log
 touch /var/log/auth.log
+sudo chown root:syslog /var/log/auth.log
 
 sudo truncate -s 0 /var/log/syslog
 sudo truncate -s 0 /var/log/kern.log
