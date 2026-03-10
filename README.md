@@ -363,6 +363,9 @@ shopt -s nullglob
 # sudo fail2ban-client status sshd > /var/log/fail2ban_review_sshd_$(date +%Y%m%d).log
 # sudo fail2ban-client banned >> /var/log/fail2ban_review_banned_$(date +%Y%m%d).log
 
+ARCHIVE=~/logs_backup.tar.gz
+ENCRYPTED=$ARCHIVE.gpg
+
 # Comment these 3 lines with a: #, if you want encrypted backups:
 [ -f "$ARCHIVE" ] && shred -u "$ARCHIVE"
 [ -f "$ENCRYPTED" ] && shred -u "$ENCRYPTED"
